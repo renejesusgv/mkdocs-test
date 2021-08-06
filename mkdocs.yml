@@ -1,0 +1,5 @@
+site_name: mkdocs-test
+plugins:
+  - markdown-editor:
+      verbose: true
+      theme: default
