@@ -28,19 +28,19 @@ jobs:
           body: |
            This issue will create a new PR -- wait for it...
 
+      - name: Dash name
+        run: |
+          DASHED_NAME=$(node -e 'require("./scripts/helpers").toDashCase("some string")')
+          echo "$DASHED_NAME"
+
       - name: View the github context
-        run: echo "$GITHUB_CONTEXT"
+        run: echo "$DASHED_NAME"
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
       - uses: "finnp/create-file-action@master"
         env:
           FILE_NAME: "test-file.md"
-          FILE_DATA: ${{ github.event.issue.body }}
-
-      - name: Dash name
-        run: |
-          DASHED_NAME=$(node -e 'require("./scripts/helpers").toDashCase("some string")')
-          echo "$DASHED_NAME"
+          FILE_DATA: ${{ github.event.issue.body }}    
       # - name: Create Pull Request
       #   id: cpr
       #   uses: peter-evans/create-pull-request@v3
