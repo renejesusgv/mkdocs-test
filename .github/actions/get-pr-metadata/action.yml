@@ -1,0 +1,12 @@
+name: 'Returns valid PR metadata'
+description: 'Returns a valid YAML body and the branch name'
+outputs:
+  title:
+    description: 'The pull request title'
+  body:
+    description: 'The valid yaml'  
+  branchName:
+    description: 'The branch name'
+runs:
+  using: 'node12'
+  main: 'index.js'

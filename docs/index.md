@@ -19,6 +19,3 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
 ## New Entry
 This is how a new entry looks like. And this line was added using StackEdit.
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY4NjI0OTQ1OCwxMTEyNjg4MDRdfQ==
--->
