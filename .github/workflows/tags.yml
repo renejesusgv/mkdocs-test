@@ -21,6 +21,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node_version }}
+      - run: npm install ./scripts/package.json    
       - name: Add comment
         uses: peter-evans/create-or-update-comment@v1
         with:
@@ -29,7 +30,7 @@ jobs:
            This issue will create a new PR -- wait for it...
 
       - name: Export dash name
-        run: echo DASHED_NAME=$(node -e 'require("./scripts/helpers").toDashCase("some string.txt")') >> $GITHUB_ENV
+        run: echo DASHED_NAME=$(node -e 'require("./scripts/helpers").toDashCase(${{github.event.issue.body}})') >> $GITHUB_ENV
 
       - name: Echo DASHED_NAME
         run: echo $DASHED_NAME

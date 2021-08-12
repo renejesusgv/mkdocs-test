@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "markdown-yaml-metadata-parser": "^3.0.0"
+  }
+}
