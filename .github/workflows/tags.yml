@@ -33,6 +33,7 @@ jobs:
 
       - id: pr-metadata
         uses: ./.github/actions/get-pr-metadata
+        # run: ${{ steps.pr-metadata.outputs.body }} > ${{ steps.pr-metadata.outputs.title }}.md
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v3
