@@ -9,7 +9,7 @@ function toDashCase(str){
 
 try {
     const parsedMetadata = metadataParser(github.context.payload.issue.body).metadata
-    if (parsedMetadata && parsedMetadata.sections.length){
+    if (parsedMetadata && parsedMetadata.sections && parsedMetadata.sections.length){
         const branchName = toDashCase(parsedMetadata.title);
         const fileName = `${toDashCase(parsedMetadata.title)}.md`;
 

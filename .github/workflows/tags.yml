@@ -3,13 +3,13 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Add comment
+name: Labeled Issue
 on:
   issues:
     types:
       - labeled
 jobs:
-  add-comment:
+  create-pr:
     if: github.event.label.name == 'review' && github.actor == 'renejesusgv'
     runs-on: ubuntu-latest
     permissions:
@@ -63,4 +63,12 @@ jobs:
           body: |
             Pull Request Number created - ${{ steps.cpr.outputs.pull-request-number }}
             Pull Request URL - ${{ steps.cpr.outputs.pull-request-url }}
+      - name: Remove issue
+        uses: szollarp/remove-label-from-issue-action@v1
+        with:
+          token: ${{ secrets.CREATE_PULL_REQUEST_TOKEN }}
+          labels: review
+          issueNumber: ${{ github.event.issue.number }}
+  
+
 # You also can print the whole github context to the logs to view more details.            
