@@ -11,10 +11,12 @@ try {
     const parsedMetadata = metadataParser(github.context.payload.issue.body).metadata
     if (parsedMetadata && parsedMetadata.sections.length){
         const branchName = toDashCase(parsedMetadata.title);
+        const fileName = `${toDashCase(parsedMetadata.title)}.md`;
 
         core.setOutput("title", parsedMetadata.title);
         core.setOutput("body", github.context.payload.issue.body);
         core.setOutput("branchName", branchName);
+        core.setOutput("fileName", fileName);
     } else {
         throw new Error("Front matter parse error ")
     }
