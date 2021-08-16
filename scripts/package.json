@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "front-matter": "^4.0.2",
-    "markdown-yaml-metadata-parser": "^3.0.0"
-  }
-}
