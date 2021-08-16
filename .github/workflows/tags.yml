@@ -17,11 +17,6 @@ jobs:
     steps:
       - name: checkout repo
         uses: actions/checkout@v2
-      - name: Set Node.js version ${{ matrix.node_version }}
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ matrix.node_version }}
-      - run: npm install
       - name: Add comment
         uses: peter-evans/create-or-update-comment@v1
         with:
