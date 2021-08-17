@@ -34,7 +34,7 @@ jobs:
         id: cpr
         uses: peter-evans/create-pull-request@v3
         with:
-          token: ${{ secrets.CREATE_PULL_REQUEST_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: New file created by ${{ github.actor }} from issue ${{ github.event.issue.number }}
           committer: GitHub <noreply@github.com>
           author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
@@ -61,12 +61,12 @@ jobs:
       - name: Remove pull-request label
         uses: szollarp/remove-label-from-issue-action@v1
         with:
-          token: ${{ secrets.CREATE_PULL_REQUEST_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           labels: pull-request
           issueNumber: ${{ github.event.issue.number }}
       - name: Add in review label
         uses: szollarp/add-label-to-issue-action@v1
         with:
-          token: ${{ secrets.CREATE_PULL_REQUEST_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           labels: in-review
           issueNumber: ${{ github.event.issue.number }}
