@@ -35,7 +35,7 @@ jobs:
         uses: peter-evans/create-pull-request@v3
         with:
           token: ${{ secrets.CREATE_PULL_REQUEST_TOKEN }}
-          commit-message: New file created by ${{ github.actor }} from ${{ github.event.issue.number }}
+          commit-message: New file created by ${{ github.actor }} from issue ${{ github.event.issue.number }}
           committer: GitHub <noreply@github.com>
           author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
           signoff: false
