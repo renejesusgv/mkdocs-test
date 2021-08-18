@@ -23,8 +23,8 @@ jobs:
         with:
           node-version: '14'
           cache: 'npm'
-          cache-dependency-path: .github/actions/package-lock.json
-      - run: npm install    
+          cache-dependency-path: .github/actions/get-pr-metadata/package-lock.json
+      - run: npm install .github/actions/get-pr-metadata
       - name: Add comment
         uses: peter-evans/create-or-update-comment@v1
         with:
@@ -38,6 +38,7 @@ jobs:
         run: |
           echo "${{ steps.pr-metadata.outputs.body }}" > ${{ steps.pr-metadata.outputs.fileName }}
           mv ${{ steps.pr-metadata.outputs.fileName }} docs/
+          rm package-lock.json
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v3
