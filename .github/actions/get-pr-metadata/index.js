@@ -9,7 +9,7 @@ function toDashCase(str){
 
 try {
     const parsedMetadata = metadataParser(github.context.payload.issue.body).metadata
-    if (parsedMetadata && parsedMetadata.sections && parsedMetadata.sections.length){
+    if (parsedMetadata && parsedMetadata.title){
         const branchName = toDashCase(parsedMetadata.title);
         const fileName = `${toDashCase(parsedMetadata.title)}.md`;
 
@@ -18,7 +18,7 @@ try {
         core.setOutput("branchName", branchName);
         core.setOutput("fileName", fileName);
     } else {
-        throw new Error("Front matter parse error ")
+        throw new Error("The title is required on the metadata section.")
     }
 } catch (error) {
     core.setFailed(error.message);

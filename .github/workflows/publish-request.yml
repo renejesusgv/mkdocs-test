@@ -37,19 +37,18 @@ jobs:
         uses: ./.github/actions/get-pr-metadata
         continue-on-error: true
 
-      - name: Check outputs
+      - name: Check outputs on error
         if: ${{ steps.metadata.outcome }} == 'failure'
         run: |
-          echo "Missing title on the front matter section"
-          echo "Provide a valid title and try again"
+          echo "Please, add a title in your metadata and try again,"
       - name: Add comment
         uses: peter-evans/create-or-update-comment@v1
         if: ${{ steps.metadata.outcome }} == 'failure'
         with:
           issue-number: ${{ github.event.issue.number }}
           body: |
-            Missing title on the front matter section
-            Provide a valid title and try again  
+            Please, add a title in your metadata and try again.
+      
       - name: Remove publish-request label
         uses: szollarp/remove-label-from-issue-action@v1
         if: ${{ steps.metadata.outcome }} == 'failure'
@@ -58,12 +57,12 @@ jobs:
           labels: publish-request
           issueNumber: ${{ github.event.issue.number }}
 
-      - name: Add missing title label
+      - name: Add action required label
         uses: szollarp/add-label-to-issue-action@v1
         if: ${{ steps.metadata.outcome }} == 'failure'
         with:
           token: ${{ secrets.CREATE_PULL_REQUEST_TOKEN }}
-          labels: missing-title
+          labels: action-required
           issueNumber: ${{ github.event.issue.number }}
 
       - name: Exit on failure
