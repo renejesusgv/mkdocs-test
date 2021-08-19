@@ -36,7 +36,7 @@ jobs:
         uses: ./.github/actions/get-pr-metadata
         continue-on-error: true
 
-######## If metadata error
+######## Step error
       - name: Check outputs on error
         if: steps.pr-metadata.outcome != 'success'
         run: |
