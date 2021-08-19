@@ -32,18 +32,19 @@ jobs:
           body: |
            This issue will create a new PR -- wait for it...
 
-      - name: metadata
-        id: pr-metadata
+      - id: pr-metadata
         uses: ./.github/actions/get-pr-metadata
         continue-on-error: true
 
+######## If metadata error
       - name: Check outputs on error
-        if: ${{ steps.metadata.outcome }} == 'failure'
+        if: steps.pr-metadata.outcome != 'success'
         run: |
-          echo "Please, add a title in your metadata and try again,"
+          echo "Please, add a title in your metadata and try again."
+  
       - name: Add comment
         uses: peter-evans/create-or-update-comment@v1
-        if: ${{ steps.metadata.outcome }} == 'failure'
+        if: steps.pr-metadata.outcome != 'success'
         with:
           issue-number: ${{ github.event.issue.number }}
           body: |
@@ -51,7 +52,7 @@ jobs:
       
       - name: Remove publish-request label
         uses: szollarp/remove-label-from-issue-action@v1
-        if: ${{ steps.metadata.outcome }} == 'failure'
+        if: steps.pr-metadata.outcome != 'success'
         with:
           token: ${{ secrets.CREATE_PULL_REQUEST_TOKEN }}
           labels: publish-request
@@ -59,15 +60,16 @@ jobs:
 
       - name: Add action required label
         uses: szollarp/add-label-to-issue-action@v1
-        if: ${{ steps.metadata.outcome }} == 'failure'
+        if: steps.pr-metadata.outcome != 'success'
         with:
           token: ${{ secrets.CREATE_PULL_REQUEST_TOKEN }}
           labels: action-required
           issueNumber: ${{ github.event.issue.number }}
 
       - name: Exit on failure
-        if: ${{ steps.metadata.outcome }} == 'failure'
+        if: steps.pr-metadata.outcome != 'success'
         run: exit 1
+ ##########
       - name: Commits new file
         run: |
           echo "${{ steps.pr-metadata.outputs.body }}" > ${{ steps.pr-metadata.outputs.fileName }}
