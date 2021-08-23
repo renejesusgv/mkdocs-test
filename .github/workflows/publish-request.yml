@@ -74,7 +74,7 @@ jobs:
         run: |
           echo "${{ steps.pr-metadata.outputs.body }}" > ${{ steps.pr-metadata.outputs.fileName }}
           mv ${{ steps.pr-metadata.outputs.fileName }} docs/
-          rm package-lock.json
+#          rm package-lock.json
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v3
