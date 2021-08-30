@@ -18,5 +18,3 @@ collections:
       - {label: "Labels", name: "labels", widget: "list"}
       - {label: "Section", name: "sections", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
-# client id  6f7ad4403edeb2f158a2
-# client secret 181bb7700b247a58f025e081b21aa3cef50c83d7
