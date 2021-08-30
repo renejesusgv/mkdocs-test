@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>Wizeline docs as code - mkdocs-test</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="js/jquery-1.10.2.min.js" defer></script>
+        <script src="js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">mkdocs-test</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="index.html" class="nav-link">Welcome to MkDocs</a>
+                            </li>
+                            <li class="navitem active">
+                                <a href="contributors.explain.docs-as-code.html" class="nav-link">Wizeline docs as code</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="index.html" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" class="nav-link disabled">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#wizeline-docs-as-code" class="nav-link">Wizeline Docs as Code</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#setting-up-wizeline-docs-as-code-locally" class="nav-link">Setting up Wizeline Docs as Code Locally</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#collaborating" class="nav-link">Collaborating</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#references-and-further-reading" class="nav-link">References and Further Reading</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="wizeline-docs-as-code">Wizeline Docs as Code</h1>
+<p>Wizeline Docs as Code is an internal documentation strategy to establish an
+SSOT. The goal is for Wizeliners to create, maintain, and share internal
+documentation across the different disciplines using the proposed site built
+with <a href="https://www.mkdocs.org">MkDocs</a> and <a href="https://squidfunk.github.io/mkdocs-material/">Material for
+MkDocs</a>.</p>
+<h2 id="setting-up-wizeline-docs-as-code-locally">Setting up Wizeline Docs as Code Locally</h2>
+<p>To set up Wizeline Docs as Code in your local environment, follow the steps in the
+<a href="https://github.com/wizeline/wizedocs/tree/main/mkdocs_README.md"><code>wizedocs/mkdocs_README.md</code></a> directory.</p>
+<h2 id="collaborating">Collaborating</h2>
+<p>You can add new pages to the Wizeline Docs as Code repository to update the site
+using the GitHub user interface (UI) or via the Command Line Interface (CLI).</p>
+<h3 id="adding-new-pages-using-the-github-ui">Adding New Pages Using the GitHub UI</h3>
+<p>To add a new page using the <a href="https://github.com/">GitHub</a> UI, follow the next steps:</p>
+<ol>
+<li>
+<p>Navigate to the
+   <a href="https://github.com/wizeline/wizedocs/tree/main/docs"><code>wizedocs/docs/</code></a>
+   directory in the Wizeline Docs as Code repository.</p>
+</li>
+<li>
+<p>Click the <strong>Add file</strong> button on the top right corner and choose to <strong>Create
+   a new file</strong> or <strong>Upload files</strong> if you have a document ready.</p>
+</li>
+</ol>
+<blockquote>
+<p><strong>Note</strong>: Use the navigation levels to name your <code>.md</code> file. Separate the
+navigation levels that lead to your document with a period and use hyphens
+instead of spaces. For example, if you have a document named "Style Guide for
+Contributors" in a writing section under tutorials, name your file as follows:</p>
+<p><code>tutorials.writing.style-guide-for-contributors.md</code></p>
+</blockquote>
+<ol>
+<li>Create a Markdown file with the documentation you want to add to the site.</li>
+</ol>
+<blockquote>
+<p><strong>Important</strong>: Your document needs to include the following details before
+its contents:<br />
+<code>---</code><br />
+title: Document title.<br />
+summary: Short description of the document.<br />
+sections: Section of the site where the content belongs.<br />
+<code>---</code>  </p>
+<p>You can consult this
+<a href="https://raw.githubusercontent.com/wizeline/wizedocs/main/docs/contributors.tutorials.markdown-guide-for-contributors.md?token=AF4TZQIKM5Y2SZY2LO5HCC3BAMGFA">raw document</a>
+to see an example.</p>
+</blockquote>
+<ol>
+<li>
+<p>Fill the fields in the <strong>Commit new file</strong> section.</p>
+</li>
+<li>
+<p>Select the <strong>Create a new branch for this commit and start a pull request</strong> option.</p>
+</li>
+<li>
+<p>Click the <strong>Commit new file</strong> button.</p>
+</li>
+</ol>
+<h3 id="adding-new-pages-via-cli">Adding New Pages via CLI</h3>
+<p>To add a new page using the command line, follow the next steps:</p>
+<ol>
+<li>Clone the repository:</li>
+</ol>
+<p><code>bash
+   git clone git@github.com:wizeline/wizedocs.git</code></p>
+<ol>
+<li>Navigate to your local <code>wizedocs/docs/</code> directory and create your own branch
+   as follows:  </li>
+</ol>
+<p><code>bash
+   git checkout -b your-branch</code></p>
+<blockquote>
+<p><strong>Note</strong>: Give your branch a name that relates to the document you are creating.</p>
+</blockquote>
+<ol>
+<li>
+<p>Create a new <code>.md</code> file into the <code>wizedocs/docs/</code> folder. Remember to follow
+   the naming convention described in step two of <a href="#adding-new-pages-using-the-github-ui">Adding New Pages Using the GitHub
+   UI</a> and include
+   the details described in step three at the top of your document.</p>
+</li>
+<li>
+<p>Add to Git the files you create and modify using the <code>add</code> command:</p>
+<p><code>bash
+   git add 'your-document.md'</code></p>
+</li>
+<li>
+<p>Commit and push your changes:</p>
+</li>
+</ol>
+<p><code>bash
+   git commit -m 'description of commit'
+   git push -u origin your-branch</code></p>
+<ol>
+<li>Go to the GitHub
+   <a href="https://github.com/wizeline/wizedocs">repository</a> and create a pull request;
+   this action enables you to add a reviewer for the document. Once you complete
+   the review and everything looks good, you can continue the process and merge
+   the changes. At this point your document will appear on the site.</li>
+</ol>
+<h2 id="references-and-further-reading">References and Further Reading</h2>
+<p>Consult the following resources for more information on MkDocs and using Git:</p>
+<ul>
+<li>Detailed information about writing your documents with MkDocs is available on the <a href="https://www.mkdocs.org/user-guide/writing-your-docs/">MkDocs official website</a>.</li>
+<li>GitHub branching, pull requests, and merging resources:</li>
+<li><a href="https://zepel.io/blog/how-to-create-a-new-branch-in-github/">Creating a new branch in GitHub made
+    effortless</a> by
+    Vikash Koushik.</li>
+<li><a href="https://www.git-tower.com/learn/git/faq/create-branch/">Git branches FAQ</a>
+    from the Tower website.</li>
+<li><a href="https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request">Creating a pull
+    request</a>
+    from GitHub Docs.</li>
+<li><a href="https://yangsu.github.io/pull-request-tutorial/">Pull request tutorial</a> by
+    Yang Su.</li>
+<li><a href="https://docs.github.com/en/github/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request">Merging a pull
+    request</a>
+    from GitHub Docs.</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js" defer></script>
+        <script src="search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
