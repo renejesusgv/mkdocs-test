@@ -1,2 +1,1 @@
 mkdocs==1.2.1
-/Users/rene.gaspar/Documents/wizeline/markdown-editor-plugin/
