@@ -85,7 +85,7 @@ jobs:
           author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
           signoff: false
           branch: ${{ steps.pr-metadata.outputs.branchName }}
-          base: main
+          base: master
           delete-branch: true
           title: ${{ steps.pr-metadata.outputs.title }}
           body: |
