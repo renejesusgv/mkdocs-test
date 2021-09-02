@@ -1,1 +1,90 @@
-site_name: mkdocs-test
+edit_uri: https://github.com/wizeline/wizedocs/edit/main/docs/
+extra_css:
+- stylesheets/extra.css
+extra_javascript:
+- https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js
+- extra-javascript/custom-calls.js
+markdown_extensions:
+- pymdownx.superfences:
+    custom_fences:
+    - class: mermaid
+      format: !!python/name:pymdownx.superfences.fence_div_format ''
+      name: mermaid
+    - class: mermaid
+      format: !!python/name:pymdownx.superfences.fence_div_format ''
+      name: diagram
+nav:
+- ' ':
+  - Wizeline Knowledge Center: index.md
+  - Project Structure: contributors.explain.docs-as-code.project-structure.md
+  - Foundations of Wizeline's SSOT: contributors.explain.Wizeline-SSOT-Foundations.md
+  - SSOT Definition and Benefits: contributors.explain.SSOT-importance.md
+- About:
+  - Confluence as SSOT: contributors.explain.docs-as-code.confluence-as-ssot.md
+  - GitHub Project and Static Site as SSOT: about.github-as-ssot.md
+  - Problem Statement and Proposal: contributors.explain.docs-as-code.problem-statement-and-proposal.md
+  - Wizeline Docs Project Charter: contributors.explain.docs-as-code.project-charter.md
+- Engine Room:
+  - Ernest:
+    - Priorities: priorities.md
+- For Contributors:
+  - Contributors Home Page: contributors.index.md
+  - Content Creation Guides:
+    - Writing for Readers: contributors.tutorials.document-structure-for-readers.md
+    - Markdown Guide for Contributors: contributors.tutorials.markdown-guide-for-contributors.md
+    - Wizeline Document Types Guide: contributors.tutorials.doc-types-guide.md
+    - Style Guide for Contributors: contributors.tutorials.style-guide.md
+    - Documentation Maintenance Guide: contributors.maintenance-guide.md
+    - Content Creation Guidelines and Resources: contributors.tutorials.content-creation-guidelines-and-resources.md
+    - Merging Guidelines: contributors.tutorials.merging-guide.md
+  - Tools:
+    - Wizeline Docs as Code: contributors.tutorials.docs-as-code.md
+    - Theme Overriding: contributors.tools.theme-overriding.md
+    - Using GitHub Actions: contributors.reference.using-github-actions.md
+    - Mermaid Integration and Configuration with MkDocs: contributors.explain.mermaid.configuration.md
+    - Diagrams Guide for Contributors: contributors.tutorials.diagrams-guide-for-contributors.md
+- PJM:
+  - Project Management Home Page: pjm.index.md
+- QA:
+  - QA Home Page: qa.index.md
+- SRE:
+  - SRE Home Page: sre.index.md
+  - The SRE Discipline  at Wizeline: discipline-sre.explain.definition.md
+- TW:
+  - Technical Writing Home Page: tw.index.md
+- UX:
+  - UX & Design Home Page: ux.index.md
+plugins:
+- search
+- git-authors
+- git-revision-date-localized
+repo_name: Wizeline Docs
+repo_url: https://github.com/wizeline/wizedocs
+site_name: Wizeline Knowledge Center
+theme:
+  custom_dir: overrides
+  features:
+  - navigation.instant
+  - navigation.tabs
+  - navigation.top
+  logo: images/wizeline_isotype.png
+  markdown_extensions:
+  - toc:
+      permalink: true
+  - meta
+  name: material
+  palette:
+  - accent: indigo
+    media: '(prefers-color-scheme: light)'
+    primary: black
+    scheme: default
+    toggle:
+      icon: material/weather-night
+      name: Switch to dark mode
+  - media: '(prefers-color-scheme: dark)'
+    scheme: slate
+    toggle:
+      accent: cyan
+      icon: material/weather-sunny
+      name: Switch to light mode
+      primary: black

@@ -1,0 +1,42 @@
+name: Frontmatter-reviewdog
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  frontmatter:
+    name: frontmatter-check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v2
+      
+      - name: Get modified files
+        uses: lots0logs/gh-action-get-changed-files@2.1.4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install Front Matter library
+        run: pip install python-frontmatter yamale
+
+      - id: files
+        uses: jitterbit/get-changed-files@v1
+
+      - uses: reviewdog/action-setup@v1
+        with:
+          reviewdog_version: latest # Optional. [latest,nightly,v.X.Y.Z]
+
+      - name: Run reviewdog Front Matter
+        env:
+          REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FILE_TO_REVIEW: ${{ steps.files.outputs.all }}
+        run: |
+          reviewdog -reporter=github-pr-review -runners=frontmatter -filter-mode=file
+
+      - name: Run reviewdog Front Matter check
+        env:
+          REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FILE_TO_REVIEW: ${{ steps.files.outputs.all }}
+        run: |
+          reviewdog -reporter=github-pr-check -runners=frontmatter -filter-mode=file

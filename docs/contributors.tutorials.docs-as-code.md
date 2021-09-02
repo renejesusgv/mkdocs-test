@@ -1,12 +1,13 @@
 ---
-title: Wizeline docs as code
+title: Wizeline Docs as Code
 summary: Wizeline docs as code description and collaboration instructions.
 authors:
     - Mario Morales
     - Brenda Leyva
 labels: wizeline, tw
 sections: 
-  - For Contributors/Explain
+  - For Contributors/Tools
+document-type: how-to-guide
 ---
 
 # Wizeline Docs as Code
@@ -41,22 +42,25 @@ To add a new page using the [GitHub](https://github.com/) UI, follow the next st
    >**Note**: Use the navigation levels to name your `.md` file. Separate the
    >navigation levels that lead to your document with a period and use hyphens
    >instead of spaces. For example, if you have a document named "Style Guide for
-   >Contributors" in a writing section under tutorials, name your file as follows:
+   >Contributors" in a writing section under contributors, name your file as follows:
    >
-   >`tutorials.writing.style-guide-for-contributors.md`
+   >`contributors.writing.style-guide-for-contributors.md`
 
 3. Create a Markdown file with the documentation you want to add to the site.
 
-   >**Important**: Your document needs to include the following details before
+   >**Important**: Your document must include the following details before
    >its contents:  
    > `---`  
-   > title: Document title.  
-   > summary: Short description of the document.  
-   > sections: Section of the site where the content belongs.  
+   > title: [*Title of your document*]  
+   > summary: [*Include a brief description of your document*]  
+   > authors: [*Include your name and the names of any additional collaborators*]  
+   > labels: [*Key words separated by a comma, example: "wizeline, tw"*]  
+   > sections: [*Path to section in navigation, example: "For Everyone/SRE"*]  
+   > document-type: [*Tutorial, How-to Guide, Reference or Explanation*]  
    > `---`  
    >
    > You can consult this
-   > [raw document](https://raw.githubusercontent.com/wizeline/wizedocs/main/docs/contributors.tutorials.markdown-guide-for-contributors.md?token=AF4TZQIKM5Y2SZY2LO5HCC3BAMGFA)
+   > [raw document](./contributors.tutorials.markdown-guide-for-contributors.md)
    > to see an example.
 
 4. Fill the fields in the **Commit new file** section.
@@ -114,16 +118,16 @@ Consult the following resources for more information on MkDocs and using Git:
 
 - Detailed information about writing your documents with MkDocs is available on the [MkDocs official website](https://www.mkdocs.org/user-guide/writing-your-docs/).
 - GitHub branching, pull requests, and merging resources:
-  - [Creating a new branch in GitHub made
-    effortless](https://zepel.io/blog/how-to-create-a-new-branch-in-github/) by
+  - [Creating a New Branch in GitHub Made
+    Effortless](https://zepel.io/blog/how-to-create-a-new-branch-in-github/) by
     Vikash Koushik.
-  - [Git branches FAQ](https://www.git-tower.com/learn/git/faq/create-branch/)
+  - [Git Branches FAQ](https://www.git-tower.com/learn/git/faq/create-branch/)
     from the Tower website.
-  - [Creating a pull
-    request](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request)
+  - [Creating a Pull
+    Request](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request)
     from GitHub Docs.
-  - [Pull request tutorial](https://yangsu.github.io/pull-request-tutorial/) by
+  - [Pull Request Tutorial](https://yangsu.github.io/pull-request-tutorial/) by
     Yang Su.
-  - [Merging a pull
-    request](https://docs.github.com/en/github/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request)
+  - [Merging a Pull
+    Request](https://docs.github.com/en/github/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request)
     from GitHub Docs.

@@ -1,0 +1,7 @@
+extends: existence
+message: "Consider inserting an Oxford comma to separate the elements in '%s'."
+link: '/contributors.tutorials.style-guide/#use-of-the-oxford-comma'
+scope: sentence
+level: warning
+tokens:
+  - '(?:[^,]+,){1,}\s\w+\s(?:and|or)'

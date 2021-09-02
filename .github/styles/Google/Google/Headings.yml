@@ -1,0 +1,30 @@
+extends: capitalization
+message: "'%s' must use Title Case capitalization."
+link: '/contributors.tutorials.style-guide/##capitalization'
+level: warning
+scope: heading
+match: $title
+exceptions:
+  - am
+  - are
+  - aren't
+  - is
+  - isn't
+  - its
+  - it's
+  - there's
+  - they're
+  - was
+  - wasn't
+  - we're
+  - were
+  - weren't
+  - what's
+  - where's
+  - who's
+  - you're
+  - from
+  - to
+  - into
+  - it
+

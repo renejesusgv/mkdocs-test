@@ -1,0 +1,26 @@
+version: 1
+vaults:
+    -
+        fsPath: docs
+useFMTitle: true
+useNoteTitleForLink: true
+noAutoCreateOnDefinition: true
+noLegacyNoteRef: true
+noXVaultWikiLink: true
+lookupConfirmVaultOnCreate: false
+autoFoldFrontmatter: true
+journal:
+    dailyDomain: daily
+    name: journal
+    dateFormat: y.MM.dd
+    addBehavior: childOfDomain
+    firstDayOfWeek: 1
+site:
+    copyAssets: true
+    siteHierarchies:
+        - index
+    siteRootDir: docs
+    usePrettyRefs: true
+    title: Wizeline Handbook
+    description: Wizeline knowledge space
+initializeRemoteVaults: true

@@ -1,0 +1,7 @@
+extends: existence
+message: "First letter after a colon must be in uppercase."
+link: 'docs/contributors.tutorials.style-guide.md/##capitalization'
+nonword: true
+level: warning
+tokens:
+  - ':\s[a-z]'

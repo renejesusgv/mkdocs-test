@@ -1,0 +1,2 @@
+document-type: enum('tutorial','how-to-guide','reference','explanation')
+title: str()

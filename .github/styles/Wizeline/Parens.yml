@@ -1,0 +1,7 @@
+extends: existence
+message: "Avoid using parentheses. Normally, text inside parentheses is not required. Try to make it a sentence."
+link: 'https://developers.google.com/style/parentheses'
+nonword: true
+level: suggestion
+tokens:
+  - '\(.+\)'
