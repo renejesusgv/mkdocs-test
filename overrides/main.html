@@ -1,0 +1,23 @@
+{% extends "base.html" %} <!-- this line is important to keep all files and
+                               html as if there were no changes.-->
+
+{% block content %}
+
+  <div>
+    {% if page.meta.git_revision_date_localized %}
+      Last update: {{ page.meta.git_revision_date_localized }}
+    {% endif %}
+  </div>
+
+  {% if git_page_authors %}
+    <div class="md-source-date contributors-container">
+      <small>
+          Authors: {{ git_page_authors }}
+          </span>
+      </small>
+    </div>
+  {% endif %}
+
+  {{ super() }} <!-- This line render the content of the block
+                     if it wasn't here the new content would replace everything -->
+{% endblock %}

@@ -1,0 +1,8 @@
+{
+    "tag": {
+        "prefix": "#",
+        "scope": "markdown,yaml",
+        "body": "[[#${TM_SELECTED_TEXT}|${1}]]",
+        "description": "tag"
+    },
+}

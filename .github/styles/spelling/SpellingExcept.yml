@@ -1,0 +1,7 @@
+extends: spelling
+message: "Did you really mean '%s'?"
+level: warning
+ignore: 
+  - ignore_names.txt
+  - ignore_markdown.txt
+  - ignore_software.txt

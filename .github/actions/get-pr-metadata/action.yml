@@ -1,7 +1,4 @@
 name: 'Returns valid PR metadata'
-runs:
-  using: 'node12'
-  main: './dist/index.js'
 description: 'Returns a valid YAML body and the branch name'
 outputs:
   title:
@@ -12,3 +9,6 @@ outputs:
     description: 'The branch name'
   fileName:
     description: 'The new file name'  
+runs:
+  using: 'node12'
+  main: 'index.js'

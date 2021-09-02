@@ -1,0 +1,40 @@
+name: Mkdocs
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  mkdocs:
+    name: mkdocs-check
+    runs-on: ubuntu-latest
+    strategy:
+        matrix:
+          node-version: [10.x]  
+    steps:
+      - name: Checkout base branch
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          ref: ${{ github.ref }}
+
+      - name: autoupdate mkdocs
+        uses: ./.github/actions/nav_build/
+        env:
+          GITHUB_TOKEN: ${{ secrets.MKDOCS_CONFIG_UPDATE_TOKEN }}
+          BRANCH_NAME: ${{ github.ref }}
+
+      - name: Commit files
+        if: contains(env.COMMIT_REPO, 'TRUE')
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git commit -m "GH action- update mkdocs" -a
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        if: contains(env.COMMIT_REPO, 'TRUE')
+        with:
+          github_token: ${{ secrets.MKDOCS_CONFIG_UPDATE_TOKEN }}
+          branch: ${{ github.ref }}

@@ -1,0 +1,196 @@
+extends: substitution
+message: "Consider using '%s' instead of '%s'."
+link: '/contributors.tutorials.style-guide/#appendix-words-and-phrases-to-avoid'
+level: warning
+ignorecase: false
+action:
+  name: replace
+swap:
+  '(?:API Console  dev  developer) key': API key
+  '(?:cell ?phone  smart ?phone)': phone  mobile phone
+  '(?:dev  developer  APIs) console': API console
+  '(?:e-mail  Email  E-mail)': email
+  '(?:file ?path  path ?name)': path
+  '(?:kill  terminate  abort)': stop  exit  cancel  end
+  '(?:OAuth ?2  Oauth)': OAuth 2.0
+  '(?:ok  Okay)': OK  okay
+  '(?:WiFi  wifi)': Wi-Fi
+  '[\.]+apk': APK
+  '3\-D': 3D
+  'Google (?:I\-O  IO)': Google I/O
+  'tap (?:&  and) hold': touch & hold
+  'un(?:check  select)': clear
+  above: preceding
+  account name: username
+  action bar: app bar
+  admin: administrator
+  Ajax: AJAX
+  Android device: Android-powered device
+  android: Android
+  API explorer: APIs Explorer
+  app: application
+  approx\.: approximately
+  authN: authentication
+  authZ: authorization
+  autoupdate: automatically update
+  cellular data: mobile data
+  cellular network: mobile network
+  chapter: documents  pages  sections
+  check box: checkbox
+  check: select
+  CLI: command-line tool
+  click on: click  click in
+  Cloud: Google Cloud Platform  GCP
+  Container Engine: Kubernetes Engine
+  content type: media type
+  curated roles: predefined roles
+  data are: data is
+  Developers Console: Google API Console  API Console
+  disabled?: turn off  off
+  ephemeral IP address: ephemeral external IP address
+  fewer data: less data
+  file name: filename
+  firewalls: firewall rules
+  functionality: capability  feature
+  Google account: Google Account
+  Google accounts: Google Accounts
+  Googling: search with Google
+  grayed-out: unavailable
+  HTTPs: HTTPS
+  in order to: to
+  ingest: import  load
+  k8s: Kubernetes
+  long press: touch & hold
+  network IP address: internal IP address
+  omnibox: address bar
+  open-source: open source
+  overview screen: recents screen
+  regex: regular expression
+  SHA1: SHA-1  HAS-SHA1
+  sign into: sign in to
+  sign-?on: single sign-on
+  static IP address: static external IP address
+  stylesheet: style sheet
+  synch: sync
+  tablename: table name
+  tablet: device
+  touch: tap
+  url:  URL
+  vs\.: versus
+  World Wide Web: Web
+  web: Web 
+  carry out: perform
+  allows: enables
+  below: following
+  above: preceding   
+  via: by using
+  pre installation: pre-installation   
+  post installation: post-installation  
+  pre defined: pre-defined   
+  internet: Internet    
+  Web site: website   
+  you need to: you must
+  a large number of: many   
+  a majority of: most   
+  a sufficient amount of: enough   
+  afterwards: afterward   
+  alphanumerical: alphanumeric   
+  an abundance of: many   
+  aren’t: are not
+  doesn’t: does not  
+  as per: according to  
+  as well as: also
+  assuming that: if   
+  at a later point in time: later   
+  at all times: always
+  at the present time: now or currently   
+  at the end of: after   
+  at the time that: when   
+  at this point in time: now   
+  back slash: backslash   
+  back space: backspace   
+  back end: backend
+  front end: frontend   
+  based on the fact that: because   
+  be aware of the fact that: know   
+  be sure that: ensure that   
+  builtin: built-in  
+  by means of: by   
+  by reason of: because   
+  by the name of: called   
+  by the same token: similarly   
+  by virtue of: because  
+  can not: cannot   
+  cancelled: canceled   
+  cancelling: canceling   
+  check list: checklist   
+  checkbox: check box   
+  click on: click  
+  come to the conclusion that: conclude   
+  comply with: follow   
+  cross reference: cross-reference   
+  datafile: data file   
+  dataset: data set   
+  datasource: data source   
+  datatype: data type   
+  deinstall: uninstall   
+  down time: downtime   
+  end result: result  
+  except when: unless   
+  forward slash: slash   
+  from scratch: from the start   
+  given the condition that: if   
+  gives rise to: causes   
+  has a requirement: requires   
+  hover over: hover   
+  if that is the case: if so
+  if that is not the case: if not   
+  if you want to: to    
+  in connection with: related to  
+  in order to: to   
+  in the event that: if  
+  in the past: earlier   
+  in this day and age: currently  
+  in view of: because   
+  in-line: inline   
+  is able to: can   
+  is dependent on: depends on  
+  labelling: labeling   
+  log into: log in to   
+  lower case: lowercase   
+  make a choice: choose, select   
+  make a decision: decide   
+  make an assumption about: assume   
+  make sure that: ensure   
+  needs to be: must   
+  not in a position to: cannot   
+  on most occasions: typically   
+  on the basis of: because   
+  owing to the fact that: because   
+  pathname: path name   
+  period of time: interval   
+  present time: now   
+  previous to: before
+  prior to: before  
+  provided that: if   
+  radio button: option     
+  shows up: appears   
+  some of the: some   
+  stand-alone: standalone
+  stand alone: standalone  
+  take action: act   
+  take into account: consider
+  take into consideration: consider   
+  this means that: therefore   
+  timezone: time zone   
+  to create a new: to create   
+  utilize: use   
+  comprises of: comprises   
+  when you are done: when you complete the task   
+  whether or not: whether   
+  wild card: wildcard   
+  wish: want   
+  with reference to: about
+  with regard to: about   
+  with the exception that: except that
+  you have to: you must

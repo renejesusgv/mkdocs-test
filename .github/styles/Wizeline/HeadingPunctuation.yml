@@ -1,0 +1,13 @@
+extends: existence
+message: "Do not end headings with a period."
+link: 'https://developers.google.com/style/capitalization#capitalization-in-titles-and-headings'
+nonword: true
+level: error
+scope: heading
+action:
+  name: edit
+  params:
+    - remove
+    - '.'
+tokens:
+  - '[A-Za-z0-9][.]$'

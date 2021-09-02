@@ -1,0 +1,8 @@
+extends: existence
+message: "Avoid using '%s'. Use neutral language instead for your documentation."
+link: https://github.com/MicrosoftDocs/microsoft-style-guide/blob/master/styleguide/grammar/nouns-pronouns.md#pronouns-and-gender
+level: error
+ignorecase: true
+tokens:
+  - he/she
+  - s/he
