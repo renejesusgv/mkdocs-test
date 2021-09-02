@@ -1,0 +1,1577 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>GitHub Project and Static Site as SSOT - Wizeline Knowledge Center</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="stylesheets/extra.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <script>function __prefix(e){return new URL(".",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#analysis-of-a-github-project-and-a-static-site-as-a-single-source-of-truth" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="Wizeline Knowledge Center" class="md-header__button md-logo" aria-label="Wizeline Knowledge Center" data-md-component="logo">
+      
+  <img src="images/wizeline_isotype.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Wizeline Knowledge Center
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              GitHub Project and Static Site as SSOT
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/wizeline/wizedocs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Wizeline Docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="index.html" class="md-tabs__link">
+         
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="contributors.explain.docs-as-code.confluence-as-ssot.html" class="md-tabs__link md-tabs__link--active">
+        About
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="priorities.html" class="md-tabs__link">
+        Engine Room
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="contributors.index.html" class="md-tabs__link">
+        For Contributors
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="pjm.index.html" class="md-tabs__link">
+        PJM
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="qa.index.html" class="md-tabs__link">
+        QA
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="sre.index.html" class="md-tabs__link">
+        SRE
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="tw.index.html" class="md-tabs__link">
+        TW
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="ux.index.html" class="md-tabs__link">
+        UX
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Wizeline Knowledge Center" class="md-nav__button md-logo" aria-label="Wizeline Knowledge Center" data-md-component="logo">
+      
+  <img src="images/wizeline_isotype.png" alt="logo">
+
+    </a>
+    Wizeline Knowledge Center
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/wizeline/wizedocs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Wizeline Docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      <label class="md-nav__link" for="__nav_1">
+         
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label=" " data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+           
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        Wizeline Knowledge Center
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="contributors.explain.docs-as-code.project-structure.html" class="md-nav__link">
+        Project Structure
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="contributors.explain.Wizeline-SSOT-Foundations.html" class="md-nav__link">
+        Foundations of Wizeline's SSOT
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="contributors.explain.SSOT-importance.html" class="md-nav__link">
+        SSOT Definition and Benefits
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2">
+        About
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="About" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          About
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="contributors.explain.docs-as-code.confluence-as-ssot.html" class="md-nav__link">
+        Confluence as SSOT
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          GitHub Project and Static Site as SSOT
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="about.github-as-ssot.html" class="md-nav__link md-nav__link--active">
+        GitHub Project and Static Site as SSOT
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#advantages-and-disadvantages-of-using-github-to-build-a-single-source-of-truth" class="md-nav__link">
+    Advantages and Disadvantages of Using GitHub to build a Single Source of Truth
+  </a>
+  
+    <nav class="md-nav" aria-label="Advantages and Disadvantages of Using GitHub to build a Single Source of Truth">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#advantages" class="md-nav__link">
+    Advantages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disadvantages" class="md-nav__link">
+    Disadvantages
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#github-as-a-single-source-of-truth-for-wizeline" class="md-nav__link">
+    GitHub as a Single Source of Truth for Wizeline
+  </a>
+  
+    <nav class="md-nav" aria-label="GitHub as a Single Source of Truth for Wizeline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-allow-any-wizeliner-to-contribute" class="md-nav__link">
+    How to Allow Any Wizeliner to Contribute
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-keep-information-up-to-date" class="md-nav__link">
+    How to Keep Information Up to Date
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-decentralize-the-governance-of-documentation" class="md-nav__link">
+    How to Decentralize the Governance of Documentation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-propose-changes-across-multiple-documents-or-pages" class="md-nav__link">
+    How to Propose Changes Across Multiple Documents or Pages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-make-contributing-accessible-for-non-technical-and-technical-users" class="md-nav__link">
+    How to Make Contributing Accessible for Non-Technical and Technical users
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-make-finding-information-easy-and-intuitive" class="md-nav__link">
+    How to Make Finding Information Easy and Intuitive
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-make-async-collaboration-possible" class="md-nav__link">
+    How to Make Async Collaboration Possible
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-make-wizeliners-aware-of-needed-contributions" class="md-nav__link">
+    How to Make Wizeliners Aware of Needed Contributions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-get-feedback-from-the-right-people-for-contributions" class="md-nav__link">
+    How to Get Feedback from the Right People for Contributions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="contributors.explain.docs-as-code.problem-statement-and-proposal.html" class="md-nav__link">
+        Problem Statement and Proposal
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="contributors.explain.docs-as-code.project-charter.html" class="md-nav__link">
+        Wizeline Docs Project Charter
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Engine Room
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Engine Room" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Engine Room
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" >
+      
+      <label class="md-nav__link" for="__nav_3_1">
+        Ernest
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Ernest" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Ernest
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="priorities.html" class="md-nav__link">
+        Priorities
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        For Contributors
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="For Contributors" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          For Contributors
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="contributors.index.html" class="md-nav__link">
+        Contributors Home Page
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      <label class="md-nav__link" for="__nav_4_2">
+        Content Creation Guides
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Content Creation Guides" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Content Creation Guides
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="contributors.tutorials.document-structure-for-readers.html" class="md-nav__link">
+        Writing for Readers
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="contributors.tutorials.markdown-guide-for-contributors.html" class="md-nav__link">
+        Markdown Guide for Contributors
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="contributors.tutorials.doc-types-guide.html" class="md-nav__link">
+        Wizeline Document Types Guide
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="contributors.tutorials.style-guide.html" class="md-nav__link">
+        Style Guide for Contributors
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="contributors.maintenance-guide.html" class="md-nav__link">
+        Documentation Maintenance Guide
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="contributors.tutorials.content-creation-guidelines-and-resources.html" class="md-nav__link">
+        Content Creation Guidelines and Resources
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="contributors.tutorials.merging-guide.html" class="md-nav__link">
+        Merging Guidelines
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
+      
+      <label class="md-nav__link" for="__nav_4_3">
+        Tools
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Tools" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Tools
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="contributors.tutorials.docs-as-code.html" class="md-nav__link">
+        Wizeline Docs as Code
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="contributors.tools.theme-overriding.html" class="md-nav__link">
+        Theme Overriding
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="contributors.reference.using-github-actions.html" class="md-nav__link">
+        Using GitHub Actions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="contributors.explain.mermaid.configuration.html" class="md-nav__link">
+        Mermaid Integration and Configuration with MkDocs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="contributors.tutorials.diagrams-guide-for-contributors.html" class="md-nav__link">
+        Diagrams Guide for Contributors
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        PJM
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="PJM" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          PJM
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pjm.index.html" class="md-nav__link">
+        Project Management Home Page
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        QA
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="QA" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          QA
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="qa.index.html" class="md-nav__link">
+        QA Home Page
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        SRE
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="SRE" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          SRE
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sre.index.html" class="md-nav__link">
+        SRE Home Page
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="discipline-sre.explain.definition.html" class="md-nav__link">
+        The SRE Discipline  at Wizeline
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      <label class="md-nav__link" for="__nav_8">
+        TW
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="TW" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          TW
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tw.index.html" class="md-nav__link">
+        Technical Writing Home Page
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      <label class="md-nav__link" for="__nav_9">
+        UX
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="UX" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          UX
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ux.index.html" class="md-nav__link">
+        UX & Design Home Page
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#advantages-and-disadvantages-of-using-github-to-build-a-single-source-of-truth" class="md-nav__link">
+    Advantages and Disadvantages of Using GitHub to build a Single Source of Truth
+  </a>
+  
+    <nav class="md-nav" aria-label="Advantages and Disadvantages of Using GitHub to build a Single Source of Truth">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#advantages" class="md-nav__link">
+    Advantages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disadvantages" class="md-nav__link">
+    Disadvantages
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#github-as-a-single-source-of-truth-for-wizeline" class="md-nav__link">
+    GitHub as a Single Source of Truth for Wizeline
+  </a>
+  
+    <nav class="md-nav" aria-label="GitHub as a Single Source of Truth for Wizeline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-allow-any-wizeliner-to-contribute" class="md-nav__link">
+    How to Allow Any Wizeliner to Contribute
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-keep-information-up-to-date" class="md-nav__link">
+    How to Keep Information Up to Date
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-decentralize-the-governance-of-documentation" class="md-nav__link">
+    How to Decentralize the Governance of Documentation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-propose-changes-across-multiple-documents-or-pages" class="md-nav__link">
+    How to Propose Changes Across Multiple Documents or Pages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-make-contributing-accessible-for-non-technical-and-technical-users" class="md-nav__link">
+    How to Make Contributing Accessible for Non-Technical and Technical users
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-make-finding-information-easy-and-intuitive" class="md-nav__link">
+    How to Make Finding Information Easy and Intuitive
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-make-async-collaboration-possible" class="md-nav__link">
+    How to Make Async Collaboration Possible
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-make-wizeliners-aware-of-needed-contributions" class="md-nav__link">
+    How to Make Wizeliners Aware of Needed Contributions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-get-feedback-from-the-right-people-for-contributions" class="md-nav__link">
+    How to Get Feedback from the Right People for Contributions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+
+  <div>
+    
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 2, 2021</span>
+    
+  </div>
+
+  
+    <div class="md-source-date contributors-container">
+      <small>
+          Authors: <span class='git-page-authors git-authors'><a href='mailto:rene.gaspar@wizeline.com'>Rene Jesus Gaspar Velasco</a></span>
+          </span>
+      </small>
+    </div>
+  
+
+  
+                
+                  <a href="https://github.com/wizeline/wizedocs/edit/main/docs/about.github-as-ssot.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="analysis-of-a-github-project-and-a-static-site-as-a-single-source-of-truth">Analysis of a GitHub Project and a Static Site as a Single Source of Truth</h1>
+<p>The purpose of this document is to present a brief analysis of using GitHub and a static site as a Single Source of Truth (SSOT) for Wizeline.</p>
+<h2 id="advantages-and-disadvantages-of-using-github-to-build-a-single-source-of-truth">Advantages and Disadvantages of Using GitHub to build a Single Source of Truth</h2>
+<p>Using GitHub to build an SSOT has some advantages and disadvantages, this
+section considers those that have a bigger impact.</p>
+<h3 id="advantages">Advantages</h3>
+<p>GitHub and a static site as an SSOT have the following advantages:</p>
+<ul>
+<li><strong>Version control</strong>: GitHub is built with version control in mind, it is its
+  main purpose, and on the platform each file has a history that makes it easy
+  to explore the changes that occurred to it.</li>
+<li><strong>Collaboration</strong>: This is one of the main features of GitHub, it enables a
+  seamless collaborative workflow with the help of
+  <a href="https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches">branches</a>
+  and <a href="https://docs.github.com/en/github/collaborating-with-pull-requests">pull
+  requests</a>.</li>
+<li><strong>Confidentiality</strong>: Customizable permissions enable you to restrict access to projects.</li>
+<li><strong>Tool integration</strong>: GitHub provides flexibility with a wide range of tools
+  and integrations that can improve the user experience and help create a more
+  agile workflow. <a href="https://github.com/marketplace?type=">GitHub Marketplace</a>
+  offers numerous applications, some of them and some features are free.
+  Additionally GitHub can integrate with third-party platforms like Amazon and Google Cloud.</li>
+<li><strong>Already used</strong>: The majority of technical users within the organization are familiar with GitHub and use it to collaborate on projects.</li>
+<li><strong>Identity and access</strong>: GitHub has transparent tools to manage access to
+  repositories; this article on <a href="https://docs.github.com/en/github-ae@latest/admin/authentication/managing-identity-and-access-for-your-enterprise/about-identity-and-access-management-for-your-enterprise">identity and access management for your
+  enterprise</a>
+  details the access options for an organization.</li>
+<li><strong>Markdown</strong>: GitHub interprets Markdown language natively. You can create and
+  edit documents within the platform.</li>
+<li><strong>Governance</strong>: You can setup governance rules for the project that work
+  best for the organization and update as needed. This article on <a href="https://opensource.guide/leadership-and-governance/">leadership
+  and governance</a> explores
+  the topic in depth.</li>
+<li><strong>Cost</strong>: You can create projects using numerous free tier features and the
+ services that incur a fee are affordable.</li>
+</ul>
+<h3 id="disadvantages">Disadvantages</h3>
+<p>GitHub and a static site as an SSOT have the following disadvantages:</p>
+<ul>
+<li><strong>Adoption rate</strong>: Depending on the technical level of the user, adoption
+  rates can vary. It is difficult for first-time users of GitHub, Git and
+  version control in general, to adapt to the tools.</li>
+<li><strong>Accessibility</strong>: Compared to Confluence, creating and sharing content on
+  GitHub requires a few more steps; therefore, there is a learning curve for
+  non-technical users.</li>
+<li><strong>Security</strong>: GitHub offers the possibility of private repositories, but there
+  is a low level of detail that you can set up. If a user has access to a
+  repository it means access to the whole project. Additionally, GitHub provides
+  the security settings; therefore, they don't depend on the organization.
+  GitHub security breaches can expose your projects.</li>
+</ul>
+<h2 id="github-as-a-single-source-of-truth-for-wizeline">GitHub as a Single Source of Truth for Wizeline</h2>
+<p>The following sections explore the different things Wizeline must consider
+to implement GitHub as an SSOT for Wizeline.</p>
+<h3 id="how-to-allow-any-wizeliner-to-contribute">How to Allow Any Wizeliner to Contribute</h3>
+<p>GitHub was created with collaboration in mind, but it also provides the ability
+to manage access with a certain degree of granularity. You can change permissions
+for a team or person as indicated in this article about <a href="https://docs.github.com/en/github/administering-a-repository/managing-repository-settings/managing-teams-and-people-with-access-to-your-repository">managing teams and people with access to your repository</a>.</p>
+<h3 id="how-to-keep-information-up-to-date">How to Keep Information Up to Date</h3>
+<p>With the integrations and tools available for GitHub, you can run automatic
+checks for your documentation to verify the status of the content. For example,
+you can run tests to check that any links included in the documents are working
+properly.</p>
+<p>GitHub enables teams to avoid manual tasks that are slow and prone to errors.
+For this reason, documentation maintenance becomes an easier, more efficient
+task when using this tool.</p>
+<h3 id="how-to-decentralize-the-governance-of-documentation">How to Decentralize the Governance of Documentation</h3>
+<p>With the help of automation, you can implement strategies that make new content
+go through certain filters before publishing. These filters can work at
+different tiers, going from recommendations to errors. The
+workflow does not get interrupted and it is not depending only on a review from
+a human. This makes it possible to operate with an approach that looks more like
+guardrails rather than that of gatekeepers.</p>
+<h3 id="how-to-propose-changes-across-multiple-documents-or-pages">How to Propose Changes Across Multiple Documents or Pages</h3>
+<p>One of the main advantages of using Git is that you can propose changes across
+various documents with one request. This increases flexibility and enables
+collaborations to make a bigger impact.</p>
+<h3 id="how-to-make-contributing-accessible-for-non-technical-and-technical-users">How to Make Contributing Accessible for Non-Technical and Technical users</h3>
+<p>Technical users are already familiar with version control and can easily adapt
+to this style of collaboration. However there is a learning curve to consider
+with non-technical users; they need to become familiar with the terms and tools
+for Git and GitHub. The organization must design a teaching strategy for
+those who are using this system for the first time.</p>
+<h3 id="how-to-make-finding-information-easy-and-intuitive">How to Make Finding Information Easy and Intuitive</h3>
+<p><a href="https://docs.github.com/en/github/searching-for-information-on-github/getting-started-with-searching-on-github/about-searching-on-github">Searching
+code and
+files</a>
+on GitHub is not only limited to knowing a few key words or the name of the
+specific file. The search capabilities of the site are extensive and useful.</p>
+<p>On the static site side, finding information depends on the configurations set
+in place. This gives the team flexibility to better adapt to the needs of the
+users and is superior to other platforms that don't have the option to modify
+the search process.</p>
+<h3 id="how-to-make-async-collaboration-possible">How to Make Async Collaboration Possible</h3>
+<p>Async collaboration can come in the form of collaborative editing and review
+processes. This is one of the main features that the organization can take
+advantage of when using GitHub. There is a seamless contribution and review
+process in place. Teams must agree on a few rules and the platform can
+handle the rest.</p>
+<h3 id="how-to-make-wizeliners-aware-of-needed-contributions">How to Make Wizeliners Aware of Needed Contributions</h3>
+<p>GitHub enables you to create projects, this functionality includes a board that
+aligns with agile methodologies and follows the same structure as Jira boards
+and Trello, tools that the members of the organization already know and use.</p>
+<h3 id="how-to-get-feedback-from-the-right-people-for-contributions">How to Get Feedback from the Right People for Contributions</h3>
+<p>Similar to using Confluence, Wizeline needs tooling and governance to achieve
+this, but many of the tools that enable this on GitHub are free and have a
+seamless integration to the workflow.</p>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 2, 2021</span>
+      
+    
+  </small>
+</div>
+                  
+                
+               <!-- This line render the content of the block
+                     if it wasn't here the new content would replace everything -->
+
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" title="Back to top" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="contributors.explain.docs-as-code.confluence-as-ssot.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Confluence as SSOT" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Confluence as SSOT
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="contributors.explain.docs-as-code.problem-statement-and-proposal.html" class="md-footer__link md-footer__link--next" aria-label="Next: Problem Statement and Proposal" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Problem Statement and Proposal
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.instant", "navigation.tabs", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.76f349be.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+      
+        <script src="extra-javascript/custom-calls.js"></script>
+      
+    
+  </body>
+</html>
