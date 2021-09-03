@@ -59,7 +59,7 @@ plugins:
 - git-authors
 - git-revision-date-localized
 repo_name: Wizeline Docs
-repo_url: https://github.com/wizeline/wizedocs
+repo_url: https://github.com/renejesusgv/mkdocs-test
 site_name: Wizeline Knowledge Center
 theme:
   custom_dir: overrides
