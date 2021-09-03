@@ -1,12 +1,10 @@
 ---
 title: Writing for Readers
-summary: Actions and characteristics to take in consideration when writing for creating a better reader experience.
-document-type: explanation
-sections:
-  - For Contributors/Content Creation Guides
+summary: Actions and characteristics to take in consideration when writing for
+  creating a better reader experience.
+sections: For Contributors/Content Creation Guides
 document-type: how-to-guide
 ---
-
 # Writing for Readers
 
 As developers and team members create documentation, they must consider that their average reader do not necessarily read it thoroughly.
@@ -17,20 +15,20 @@ As a writer, you must ensure that your audience perceives your documentation as 
 
 When writing, follow the next tips:
 
-- Identify the [type of documentation](#types-of-documentation) you want to write.
-- Follow a [good structure](#document-structure).
-- Have all the information in a [single page](#single-page-usage).
-- [Know your audience](#know-your-audience).
-- Create a [One Entry Point](#one-entry-point).
+* Identify the [type of documentation](#types-of-documentation) you want to write.
+* Follow a [good structure](#document-structure).
+* Have all the information in a [single page](#single-page-usage).
+* [Know your audience](#know-your-audience).
+* Create a [One Entry Point](#one-entry-point).
 
 ### Types of Documentation
 
 Writers can develop different types of documentation depending on their needs. These resources fall under one of the following categories:
 
-- Tutorials
-- How-to Guides
-- Explanations
-- References
+* Tutorials
+* How-to Guides
+* Explanations
+* References
 
 It is essential to have this in mind; the readers can use a platform more effectively by following instructions in the correct document format.
 For more information on document types, go to the [Document Types Guide](./contributors.tutorials.doc-types-guide.md).
@@ -39,10 +37,10 @@ For more information on document types, go to the [Document Types Guide](./contr
 
 Your documentation has to be engaging and compelling. You must create a writing format for your readers to follow. Some examples of structures are:
 
-- **Tell a Story**: Create a path for your reader to follow a linear narrative.
-- **Paint a Picture**: Describe everything the user sees and needs in a specific moment. Give enough details not to require an image.
-- **Theme and Situations**: Give the reader a scenario and accompany them to the proper solution.
-- **Level Up**: Show the most straightforward steps to the user first, and gradually increase the difficulty level.
+* **Tell a Story**: Create a path for your reader to follow a linear narrative.
+* **Paint a Picture**: Describe everything the user sees and needs in a specific moment. Give enough details not to require an image.
+* **Theme and Situations**: Give the reader a scenario and accompany them to the proper solution.
+* **Level Up**: Show the most straightforward steps to the user first, and gradually increase the difficulty level.
 
 ### Single Page Usage
 
@@ -54,9 +52,9 @@ Having all the information on a single page helps the reader quickly find specif
 Just as it is different to write to a family member than a colleague, you must keep in mind who are the people that read your content.
 When writing technical documentation, you must consider three main reader archetypes:
 
-- Technical
-- Semi-technical
-- Non-technical.
+* Technical
+* Semi-technical
+* Non-technical.
 
 For more information on audiences, go to the [Project Structure Guide](./contributors.explain.docs-as-code.project-structure.md).
 
