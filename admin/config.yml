@@ -13,14 +13,21 @@ collections:
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Summary", name: "summary", widget: "text"}
-      - {label: "Sections", name: "sections", widget: "string"}
-      - { label: "Document Type", name: "document-type", widget: "select",
-          options: 
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Summary"
+        name: "summary"
+        widget: "text"
+      - label: "Sections"
+        name: "sections"
+        widget: "string"
+      - label: "Document Type"
+        name: "document-type"
+        widget: "select"
+        options: 
           - {label: "Tutorial", value: "tutorial"}
           - {label: "Explanation", value: "explanation"}
           - {label: "Reference", value: "reference"}
           - {label: "How-To Guide", value: "how-to-guide"}
-        }
       - {label: "Body", name: "body", widget: "markdown"}
