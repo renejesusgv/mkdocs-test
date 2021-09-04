@@ -1,4 +1,4 @@
-/mkdocs-test/* /mkdocs-test/admin
+/admin/* /
 
 #/mkdocs-test/admin/#/collections/documents/entries/*.md /mkdocs-test
 
