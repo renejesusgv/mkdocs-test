@@ -9,7 +9,7 @@ media_folder: "site/images/uploads" # Media files will be stored in the repo und
 public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
 collections:
   - name: "documents" # Used in routes, e.g., /admin/collections/documents
-    identifier_field: "{{slug}}.md"
+    identifier_field: {{slug}}.md
     label: "Documents" # Used in the UI
     label_singular: "Document"
     folder: "/docs" # The path to the folder where the documents are stored
