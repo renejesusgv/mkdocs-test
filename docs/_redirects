@@ -1,3 +1,5 @@
-/mkdocs-test/admin/#/collections/documents/entries/*.md /mkdocs-test
+/mkdocs-test/* /mkdocs-test/admin
+
+#/mkdocs-test/admin/#/collections/documents/entries/*.md /mkdocs-test
 
 #/mkdocs-test/admin/#/collections/documents/entries/:splat
