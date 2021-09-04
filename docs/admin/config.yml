@@ -35,4 +35,5 @@ collections:
           - {label: "Explanation", value: "explanation"}
           - {label: "Reference", value: "reference"}
           - {label: "How-To Guide", value: "how-to-guide"}
+          - {label: "How-To Guide 2", value: "how-to-guide 2"}
       - {label: "Body", name: "body", widget: "markdown"}
