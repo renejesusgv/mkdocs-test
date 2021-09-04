@@ -1,5 +1,5 @@
 ---
-title: Merging Guidelines
+title: Global Merging Guidelines
 summary: Guide to merging PRs on GitHub.
 sections:
   - For Contributors/Content Creation Guides
