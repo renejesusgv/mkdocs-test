@@ -17,7 +17,6 @@ collections:
     preview_path: "preview/{{slug}}.{{extension}}"
     extension: ".md"
     format: frontmatter
-    fileType: ".md"
     fields: # The fields for each document, usually in front matter
       - label: "Title"
         name: "title"
@@ -27,7 +26,7 @@ collections:
         widget: "text"
       - label: "Sections"
         name: "sections"
-        widget: "string"
+        widget: "list"
       - label: "Document Type"
         name: "document-type"
         widget: "select"
