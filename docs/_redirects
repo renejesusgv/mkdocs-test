@@ -1,1 +1,1 @@
-/admin/*.md /admin/:splat
+/mkdocs-test/admin/*.md /mkdocs-test/admin/:splat
