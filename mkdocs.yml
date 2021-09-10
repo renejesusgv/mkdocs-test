@@ -4,6 +4,7 @@ extra_css:
 extra_javascript:
 - https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js
 - extra-javascript/custom-calls.js
+- extra-javascript/edit-url.js
 markdown_extensions:
 - pymdownx.superfences:
     custom_fences:
